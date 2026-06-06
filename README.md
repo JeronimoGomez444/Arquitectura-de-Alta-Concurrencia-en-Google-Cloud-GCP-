@@ -1,4 +1,4 @@
-// Proyecto-SO: Ecosistema de Microservicios Distribuidos //
+# Proyecto-SO: Ecosistema de Microservicios Distribuidos
 
 Este proyecto representa el trabajo final para la asignatura de **Sistemas Operativos**. Consiste en una arquitectura híbrida distribuida que integra un entorno productivo en la nube (Google Cloud Platform) con un entorno de respaldo y visualización local (WSL2/Docker Desktop).
 
