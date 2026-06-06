@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  db_master:
+    image: mysql:8.0
+    container_name: db_master
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: RootPassword99!
+    volumes:
+      # Montamos el script de inicio y la carpeta de datos persistentes
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_data:/var/lib/mysql
+    networks:
+      - cloud_net
+
+  nginx_proxy:
+    image: nginx:latest
+    container_name: nginx_proxy
+    restart: always
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "3306:3306"
+    depends_on:
+      - db_master
+    networks:
+      - cloud_net
+
+volumes:
+  mysql_data:
+
+networks:
+  cloud_net:
+    driver: bridge

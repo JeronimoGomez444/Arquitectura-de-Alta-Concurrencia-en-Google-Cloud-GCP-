@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  backup_worker:
+    build: .
+    container_name: backup_worker
+    restart: always
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./backups_locales:/data
+
+  frontend_app:
+    build: ./frontend
+    container_name: frontend_app
+    ports:
+      - "8000:8000"
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2048M
+    restart: always
