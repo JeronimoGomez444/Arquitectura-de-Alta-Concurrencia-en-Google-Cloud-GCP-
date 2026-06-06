@@ -123,8 +123,6 @@ Elegimos Concurrencia con AsyncIO porque las tareas del Frontend (consultar una 
   <img src="img/Evidencia7.png" alt="Consulta al API externa y a la base de datos" width="700"/>
 </p>
 
-// ENGLISH //
-
 # OS Project: Distributed Microservices Ecosystem
 
 This project represents the final assignment for the **Operating Systems** course. It consists of a distributed hybrid architecture that integrates a production environment in the cloud (Google Cloud Platform) with a local backup and visualization environment (WSL2/Docker Desktop).
